@@ -11,20 +11,20 @@ export class DataService {
   constructor(private _http: HttpClient) { }
 
   getAllCategories = () => {
-    return this._http.get<any>("http://10.117.189.210:9090/ing-mortgage/categories/");
+    return this._http.get<any>("http://13.233.128.233:9090/ing-mortgage/categories/");
   }
 
   getAllProducts = (catId) => {
-    return this._http.get<any>("http://10.117.189.210:9090/ing-mortgage/categories/" + catId + "/products");
+    return this._http.get<any>("http://13.233.128.233:9090/ing-mortgage/categories/" + catId + "/products");
   }
 
   getSelectedProd = (pid) => {
-    return this._http.get<any>("http://10.117.189.210:9090/ing-mortgage/products/" + pid);
+    return this._http.get<any>("http://13.233.128.233:9090/ing-mortgage/products/" + pid);
   }
 
   postUserApplication = (user) => {
 
-    return this._http.post<User>("http://10.117.189.210:9090/ing-mortgage/loans/", user);
+    return this._http.post<User>("http://13.233.128.233:9090/ing-mortgage/loans/", user);
   }
 
   getUser = (userName, password) => {
@@ -32,16 +32,16 @@ export class DataService {
       "userName": userName,
       "password": password
     }
-    return this._http.post("http://10.117.189.210:9090/ing-mortgage/login", obj);
+    return this._http.post("http://13.233.128.233:9090/ing-mortgage/login", obj);
   }
 
   getLoans = (cif) => {
-    return this._http.get("http://10.117.189.210:9090/ing-mortgage/customers/" + cif + "/loans")
+    return this._http.get("http://13.233.128.233:9090/ing-mortgage/customers/" + cif + "/loans")
   }
 
   getLoanDetails = (loanId) => {
     console.log("loan id", loanId)
-    return this._http.get("http://10.117.189.210:9090/ing-mortgage/loans/" + loanId);
+    return this._http.get("http://13.233.128.233:9090/ing-mortgage/loans/" + loanId);
   }
 
 
